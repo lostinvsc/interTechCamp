@@ -17,7 +17,7 @@ const app = express();
 app.use(cors({
   origin: [process.env.FRONTEND], // Allow requests from frontend URL
   credentials: true, // Include credentials like cookies
-  methods: ["GET", "POST", "PUT"] // Allow specific HTTP methods
+  methods: ["GET", "POST"] // Allow specific HTTP methods
 }));
 
 // Serve static files from the 'uploads' directory
@@ -70,7 +70,7 @@ async function generate(question, mediaPath) {
     `${mediaPath}`,
     {
       mimeType: "image/jpeg",
-      displayName: " ", // Optional display name
+      displayName: " ", 
     },
   );
 

@@ -10,6 +10,8 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import Signin from './page/Signin';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Logout from './page/Logout.js'
+
+
 function App() {
   // State variables
   const [question, setQuestion] = useState(''); // User's question
@@ -169,7 +171,7 @@ function App() {
   return (
     <div className="container">
      {!clientToken?
-        <GoogleOAuthProvider clientId="112784155771-ij6prlt9kmvovtq8cbrirumtfiq70i7b.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId={`${process.env.REACT_APP_CLIENT_ID}`}>
        <Router>
           <Signin  setclientToken={setclientToken}/>
         </Router>
