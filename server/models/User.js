@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
     email:String,
-    history:[Object],
+    history:[{
+        'role':String,
+         'content':String,
+    }],
 });
 
 const User = mongoose.model('User', userSchema);

@@ -3,7 +3,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
 import '../App.css'
-const Signin = () => {
+const Signin = ({setclientToken}) => {
     const navigate = useNavigate()
     const handleGoogleLogin = async (credentialResponse) => {
         try {
@@ -28,7 +28,7 @@ const Signin = () => {
 
                if(res.data.status){
                  localStorage.setItem("clientToken",res.data.token)
-                 
+                 setclientToken(res.data.token)
                }
             }
 

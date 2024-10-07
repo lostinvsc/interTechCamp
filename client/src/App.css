@@ -120,6 +120,15 @@ h1 {
 }
 
 .signin{
-  width:200px;
-  transform: translateX(61vw);
+  transform: translateX(-20vw);
+}
+.logout{
+  width:100px;
+  transform: translateX(-40vw);
+  height:30px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #1e1e1e;
+  border: 1px solid white;
+  color: white;
 }

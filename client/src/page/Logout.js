@@ -1,16 +1,17 @@
 import { googleLogout } from '@react-oauth/google';
-import axios from 'axios';
+import '../App.css'
 
-function Logout() {
+function Logout({setclientToken,setConversation}) {
   const handleLogout = async () => {
     googleLogout(); 
     
     localStorage.setItem('clientToken','');
-
+    setclientToken('')
+    setConversation([])
   };
 
   return (
-    <button onClick={handleLogout}>
+    <button className='logout' onClick={handleLogout}>
       Logout
     </button>
   );
